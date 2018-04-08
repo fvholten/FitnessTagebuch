@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FitnessTagebuch</string>
+    <string name="muskelbild">Muskelbild</string>
+    <string name="infoButton">InfoButton</string>
+    <string name="standard_uebung">Keine Übung</string>
+    <string name="unbekannt">unbekannt</string>
+    <string name="geraete">Geräte:</string>
+</resources>

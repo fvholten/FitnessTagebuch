@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/infoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/infoButton"
+                app:srcCompat="@drawable/ic_info_black" />
+
+            <TextView
+                android:id="@+id/uebungsName"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:autoSizeTextType="uniform"
+                android:text="@string/standard_uebung" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:autoSizeTextType="uniform"
+            android:text="@string/geraete"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/geraeteRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:autoSizeTextType="uniform"
+            android:text="@string/unbekannt"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/muskelimg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/difficulty"
+            android:contentDescription="@string/muskelbild"
+            android:src="@drawable/ohne" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
