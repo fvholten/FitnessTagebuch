@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import com.google.gson.Gson
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
-class UebungenAdapter(private val context: Context) :
+class UebungenAdapter(context: Context) :
         RecyclerView.Adapter<UebungenAdapter.ViewHolder>() {
 
-    private val uebungParser = UebungenParser(context)
+    private val uebungParser = UebungenParser(context, getUebungenData(context))
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UebungenAdapter.ViewHolder {
 
@@ -39,12 +41,14 @@ class UebungenAdapter(private val context: Context) :
 
 
         holder.geraeteRecyclerView.apply {
-            setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
-            adapter = GeraeteAdapter(UebungenParser(context), position)
+            adapter = GeraeteAdapter(uebungParser, position)
 
         }
-        holder.infoButton.setOnClickListener { Toast.makeText(context, "button pressed: " + position, Toast.LENGTH_LONG).show() }
+    }
+
+    private fun getUebungenData(context: Context): ArrayList<*> {
+        return Gson().fromJson(BufferedReader(InputStreamReader(context.resources.openRawResource(R.raw.uebungen_data))), Any::class.java) as ArrayList<*>
     }
 
     class ViewHolder(val infoButton: ImageButton, val uebungsName: TextView, val difficulty: TextView, val muskelImg: ImageView, val geraeteRecyclerView: RecyclerView, view: View) : RecyclerView.ViewHolder(view)

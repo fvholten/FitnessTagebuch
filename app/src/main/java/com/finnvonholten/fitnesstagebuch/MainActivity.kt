@@ -12,9 +12,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        UebungenParser(this)
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -22,10 +19,9 @@ class MainActivity : AppCompatActivity() {
         viewAdapter = UebungenAdapter(this)
 
         recyclerView = findViewById<RecyclerView>(R.id.uebungen_recycler_view).apply {
-            setHasFixedSize(true)
             layoutManager = viewManager
+            layoutManager
             adapter = viewAdapter
         }
     }
 }
-

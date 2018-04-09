@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/uebungsName"
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:text="@string/standard_uebung" />

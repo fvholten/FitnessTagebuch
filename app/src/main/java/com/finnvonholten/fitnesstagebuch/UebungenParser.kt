@@ -3,15 +3,10 @@ package com.finnvonholten.fitnesstagebuch
 import android.content.Context
 import android.widget.ImageView
 import android.widget.TextView
-import com.google.gson.Gson
 import com.google.gson.internal.LinkedTreeMap
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 
-class UebungenParser(private val context: Context) {
-
-    private val jsonArrayList = (Gson().fromJson(BufferedReader(InputStreamReader(context.resources.openRawResource(R.raw.uebungen_data))), Any::class.java) as ArrayList<*>)
+class UebungenParser(private val context: Context, private val jsonArrayList: ArrayList<*>) {
 
     fun countJsonElements(): Int {
         return jsonArrayList.size
@@ -34,7 +29,6 @@ class UebungenParser(private val context: Context) {
         when {
             ((jsonArrayList[positionParent] as LinkedTreeMap<*, *>)["gerät 1"] != null) and (positionChild == 0) -> geraeteTextView.text = (jsonArrayList[positionParent] as LinkedTreeMap<*, *>)["gerät 1"].toString()
             ((jsonArrayList[positionParent] as LinkedTreeMap<*, *>)["gerät 2"] != null) and (positionChild == 1) -> geraeteTextView.text = (jsonArrayList[positionParent] as LinkedTreeMap<*, *>)["gerät 2"].toString()
-            else -> geraeteTextView.text = "-"
         }
     }
 
