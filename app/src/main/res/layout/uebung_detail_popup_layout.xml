@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/popupLayout"
+    android:baselineAligned="false"
+    android:layout_marginTop="3dp"
+    android:layout_marginEnd="3dp"
+    android:layout_marginStart="3dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/popupTitle"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/muskelHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/muskel"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/muskelPopupContentPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="@string/unbekannt"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/infoGeraetPopup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7">
+
+
+            <TextView
+                android:id="@+id/geraetText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="@string/geraete"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/geraetePopupRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/geraetText" />
+
+            <TextView
+                android:id="@+id/mainMuskelHeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/geraetePopupRecyclerView"
+                android:padding="2dp"
+                android:text="@string/hauptmuskeln"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mainMuskelRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainMuskelHeadline" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/picture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3">
+
+            <ImageView
+                android:id="@+id/muskelimgPopup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/muskelbild"
+                android:padding="5dp"
+                android:src="@drawable/ohne" />
+
+            <TextView
+                android:id="@+id/difficultyPopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/muskelimgPopup"
+                android:text="@string/unbekannt"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/subMuskelHeadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="@string/nebenmuskeln"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.RecyclerView
+        android:padding="5dp"
+        android:id="@+id/subMuskelRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

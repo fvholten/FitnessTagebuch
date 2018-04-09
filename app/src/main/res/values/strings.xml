@@ -5,4 +5,10 @@
     <string name="standard_uebung">Keine Übung</string>
     <string name="unbekannt">unbekannt</string>
     <string name="geraete">Geräte:</string>
+    <string name="muskel">Muskel:</string>
+    <string name="nebenmuskeln">Nebenmuskeln:</string>
+    <string name="hauptmuskeln">Hauptmuskeln:</string>
+    <string name="dash">dash</string>
+    <string name="bulletPoint">•</string>
+    <string name="uebung_suchen">Übung suchen:</string>
 </resources>

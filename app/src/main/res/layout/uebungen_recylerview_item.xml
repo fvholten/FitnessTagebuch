@@ -7,56 +7,56 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
-        <RelativeLayout
-            android:id="@+id/baseInfo"
+    <RelativeLayout
+        android:id="@+id/baseInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <ImageButton
+            android:id="@+id/infoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/infoButton"
+            app:srcCompat="@drawable/ic_info_black" />
+
+        <TextView
+            android:id="@+id/uebungsName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/infoButton"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="@string/standard_uebung"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/infoButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/infoButton"
-                app:srcCompat="@drawable/ic_info_black" />
-
-            <TextView
-                android:id="@+id/uebungsName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:layout_toEndOf="@+id/infoButton"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:text="@string/standard_uebung" />
-
-        </RelativeLayout>
+    </RelativeLayout>
 
 
     <LinearLayout
-        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_below="@+id/baseInfo"
         android:layout_height="wrap_content"
-        android:baselineAligned="false">
+        android:layout_below="@+id/baseInfo"
+        android:baselineAligned="false"
+        android:padding="5dp">
 
         <RelativeLayout
             android:id="@+id/infoGeraet"
-            android:layout_weight="0.7"
             android:layout_width="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7">
 
             <TextView
-                android:paddingBottom="5dp"
                 android:id="@+id/geraetText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:paddingBottom="5dp"
                 android:text="@string/geraete"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <android.support.v7.widget.RecyclerView
@@ -70,32 +70,31 @@
 
         <RelativeLayout
             android:id="@+id/picture"
-            android:layout_weight="0.3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3">
+
+            <ImageView
+                android:id="@+id/muskelimg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/muskelbild"
+                android:padding="5dp"
+                android:src="@drawable/ohne" />
 
             <TextView
                 android:id="@+id/difficulty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_below="@id/muskelimg"
                 android:text="@string/unbekannt"
                 android:textStyle="italic" />
-
-            <ImageView
-                android:id="@+id/muskelimg"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/difficulty"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/muskelbild"
-                android:padding="5dp"
-                android:src="@drawable/ohne" />
 
         </RelativeLayout>
 
     </LinearLayout>
-
 
 
 </RelativeLayout>
